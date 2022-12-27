@@ -1,5 +1,5 @@
 ﻿#region using
-using System.Diagnostics; 
+using System.Diagnostics;
 #endregion
 
 #region Init
@@ -35,7 +35,8 @@ async Task<TimeSpan> AsyncTasks()
     watch.Start();
     Console.WriteLine("Async");
     var asyncList = new List<Task>(length);
-    foreach (var item in list) asyncList.Add(item.Run());
+    //foreach (var item in list) asyncList.Add(item.Run());
+    list.ForEach(item => asyncList.Add(item.Run()));
 
     while (asyncList.Count > 0)
     {
